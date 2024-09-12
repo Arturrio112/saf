@@ -10,8 +10,8 @@ const showTypes = ref([]);
 const selectedMetric = ref('all'); 
 const selectedType = ref('all'); 
 
-const sortColumn = ref(''); // Track the current sort column
-const sortOrder = ref('asc'); // Track the current sort order ('asc' or 'desc')
+const sortColumn = ref(''); 
+const sortOrder = ref('asc'); 
 
 const fetchData = async () => {
   try {
@@ -143,19 +143,19 @@ const sortedSensors = computed(() => {
           bValue = b.typeName.toLowerCase();
           break;
         case 'timestamp':
-          aValue = Object.values(a.metrics)[0]?.t || 0; // Assuming you're sorting based on the first metric's timestamp
+          aValue = Object.values(a.metrics)[0]?.t || 0; 
           bValue = Object.values(b.metrics)[0]?.t || 0;
           break;
         case 'value':
-          aValue = Object.values(a.metrics)[0]?.v || 0; // Assuming you're sorting based on the first metric's value
+          aValue = Object.values(a.metrics)[0]?.v || 0; 
           bValue = Object.values(b.metrics)[0]?.v || 0;
           break;
         case 'metricName':
-          aValue = Object.values(a.metrics)[0]?.name.toLowerCase() || ''; // Metric name of the first metric
+          aValue = Object.values(a.metrics)[0]?.name.toLowerCase() || ''; 
           bValue = Object.values(b.metrics)[0]?.name.toLowerCase() || '';
           break;
         case 'unitName':
-          aValue = Object.values(a.metrics)[0]?.units.find(unit => unit.selected)?.name.toLowerCase() || ''; // Unit name of the first metric
+          aValue = Object.values(a.metrics)[0]?.units.find(unit => unit.selected)?.name.toLowerCase() || ''; 
           bValue = Object.values(b.metrics)[0]?.units.find(unit => unit.selected)?.name.toLowerCase() || '';
           break;
       }
@@ -182,10 +182,10 @@ const handleTypeChange = (event) => {
 // Handle sort column change
 const handleSort = (column) => {
   if (sortColumn.value === column) {
-    sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc'; // Toggle sort order
+    sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc'; 
   } else {
     sortColumn.value = column;
-    sortOrder.value = 'asc'; // Default to ascending
+    sortOrder.value = 'asc'; 
   }
 };
 
