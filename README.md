@@ -14,4 +14,20 @@ SAF md, autors - Artūrs Palamarčuks
 
 4. Ja nepieciešams pārtraukt konteinerus, varat izmantot:
    docker-compose down
+5. Pārlūkā ierakstīt "localhost", lai atvērtu projektu
 
+# Palaišanas instrukcija, ja Docker nestrādā
+
+1. Pirmais un otrais punkts vienāds ar iepriekšējo palaišanas instrukciju
+
+2. Atveriet termināli un ierakstiet:
+    cd backend
+    pip install --no-cache-dir -r requirements.txt
+    python manage.py runserver
+
+3. Atveriet citu termināli un ierakstiet:
+    cd frontend
+    npm i
+    npm run dev
+
+4. Pārlūkā ierakstiet "localhost:5173", lai atvērtu projektu
