@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+package-lock.json
+.npm/
+npm-debug.log
+
+# Python
+*.pyc
+__pycache__/
+venv/
+*.pyo
+*.pyd
+
+# Docker
+.dockerignore
+
+# Vite
+dist/
+
+# Logs
+*.log
+
+# Environment files
+.env
